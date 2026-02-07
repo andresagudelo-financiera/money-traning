@@ -1,10 +1,9 @@
 spec:
-  name: sample-nextjs
-  services:
-  - environment_slug: node-js
-    git:
+  name: money-traning
+  static_sites:
+  - git:
       branch: main
-      repo_clone_url: https://github.com/digitalocean/sample-nextjs.git
-    instance_count: 1
-    instance_size_slug: apps-s-1vcpu-0.5gb
-    name: sample-nextjs
+      repo_clone_url: https://github.com/andresagudelo-financiera/money-traning.git
+    name: money-traning
+    build_command: npm run build
+    output_dir: dist

@@ -1,8 +1,9 @@
-name: sample-nextjs
-services:
-- environment_slug: node-js
-  github:
+name: money-traning
+static_sites:
+- github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-nextjs
-  name: sample-nextjs
+    repo: andresagudelo-financiera/money-traning
+  name: money-traning
+  build_command: npm run build
+  output_dir: dist
