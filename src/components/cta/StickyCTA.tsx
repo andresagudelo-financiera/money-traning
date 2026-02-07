@@ -10,7 +10,7 @@ interface StickyCTAProps {
  * Dispara evento InitiateCheckout de Meta Pixel
  */
 export default function StickyCTA({
-  hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50"
+  hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=daig1z7w"
 }: StickyCTAProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isOverlapping, setIsOverlapping] = useState(false);
@@ -49,7 +49,7 @@ export default function StickyCTA({
       (window as any).fbq('track', 'InitiateCheckout', {
         content_name: 'Money Training',
         content_category: 'Course',
-        value: 3500,
+        value: 3480,
         currency: 'USD'
       });
     }

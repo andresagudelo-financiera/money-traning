@@ -4,7 +4,8 @@
  * Visualización premium con precio tachado y valor real
  */
 
-const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
+const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=daig1z7w";
+const reserveUrl = "https://pay.hotmart.com/Q104268411L?off=o96xp0c2";
 ---
 
 <section id="pricing" class="relative py-16 lg:py-24 overflow-hidden">
@@ -53,72 +54,93 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
       </p>
     </div>
 
-    <!-- Pricing Card -->
-    <div class="max-w-xl mx-auto">
-      <div class="relative">
+    <!-- Pricing Grid -->
+    <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+      <!-- Main Pricing Card -->
+      <div class="relative group">
         <!-- Glow Effect -->
         <div
-          class="absolute -inset-1 bg-gradient-to-r from-rebellion-green to-rebellion-cyan rounded-3xl blur-lg opacity-30"
+          class="absolute -inset-1 bg-gradient-to-r from-rebellion-green to-rebellion-cyan rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition duration-500"
         >
         </div>
 
         <!-- Card -->
-        <div class="relative glassmorphism rounded-3xl p-8 lg:p-12">
+        <div
+          class="relative h-full glassmorphism rounded-3xl p-8 lg:p-12 border border-white/10 flex flex-col"
+        >
           <!-- Badge -->
           <div class="absolute -top-4 left-1/2 -translate-x-1/2">
             <div
-              class="text-[12px] truncate md:text-base bg-gradient-to-r from-honey-beehive to-orange-400 text-glimpse-space px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider"
+              class="text-[12px] truncate md:text-base bg-gradient-to-r from-honey-beehive to-orange-400 text-glimpse-space px-6 py-2 rounded-full font-bold text-sm uppercase tracking-wider whitespace-nowrap"
             >
-              Ahorra $5,400 USD
+              Oferta de Lanzamiento
             </div>
           </div>
 
           <!-- Program Name -->
           <div class="text-center pt-4 mb-8">
             <h3 class="text-2xl lg:text-3xl font-bold text-off-white mb-2">
-              Money Training
+              Inversión Total
             </h3>
-            <p class="text-soft-gray">Programa Completo de Formación</p>
+            <p class="text-soft-gray text-sm">Mejor relación valor-precio</p>
+          </div>
+
+          <!-- Valorado en -->
+          <div class="mb-6 flex flex-col items-center justify-center">
+            <div class="flex items-center gap-2 mb-2">
+              <span
+                class="text-soft-gray/60 text-sm uppercase tracking-widest font-light"
+                >Valor real:</span
+              >
+              <span
+                class="price-crossed text-2xl font-light opacity-60 text-soft-gray"
+                >$11,600 USD</span
+              >
+            </div>
+
+            <div class="space-y-2">
+              <div
+                class="text-soft-gray text-base italic font-light price-crossed opacity-70"
+              >
+                Precio planeado: $5,800 USD
+              </div>
+              <div
+                class="text-rebellion-cyan text-xl md:text-2xl font-black tracking-tight drop-shadow-[0_0_15px_rgba(0,212,255,0.3)]"
+              >
+                40% OFF Lanzamiento 🚀
+              </div>
+            </div>
           </div>
 
           <!-- Price Display -->
           <div class="text-center mb-8">
-            <!-- Original Price - Crossed -->
-            <div class="mb-2">
-              <span class="price-crossed text-3xl lg:text-4xl">$8,900 USD</span>
-            </div>
-
-            <!-- Current Price -->
             <div class="flex items-center justify-center gap-4">
-              <span class="text-6xl lg:text-7xl font-black text-rebellion-green"
-                >$3,500</span
+              <span class="text-5xl lg:text-7xl font-black text-rebellion-green"
+                >$3,480</span
               >
               <span class="text-2xl text-soft-gray font-light">USD</span>
             </div>
-
-            <!-- Payment Info -->
-            <p class="text-soft-gray mt-4">Pago único · Acceso de por vida</p>
+            <p class="text-soft-gray mt-2 text-sm">
+              Pago único · Acceso de por vida
+            </p>
           </div>
 
-          <!-- Divider -->
           <div class="border-t border-white/10 my-8"></div>
 
           <!-- Features List -->
-          <ul class="space-y-4 mb-10">
+          <ul class="space-y-4 mb-10 flex-grow">
             {
               [
-                "Más de 200 horas de formación completa",
-                "Acceso exclusivo al Método Vórtex",
-                "Simuladores financieros y plantillas profesionales",
-                "2 sesiones de planeación de transición profesional",
-                "3 sesiones de acompañamiento con coaches",
-                "Comunidad exclusiva y sesiones en vivo",
-                "Opción de trabajar con nuestro equipo (proceso selectivo)",
+                "Formación Completa (+200h)",
+                "Acceso al Método Vórtex",
+                "Simuladores Profesionales",
+                "Acompañamiento con Coaches",
+                "Comunidad Exclusiva",
               ].map((feature) => (
                 <li class="flex items-start gap-3">
-                  <span class="flex-shrink-0 w-6 h-6 rounded-full bg-rebellion-green/20 flex items-center justify-center mt-0.5">
+                  <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rebellion-green/20 flex items-center justify-center mt-0.5">
                     <svg
-                      class="w-4 h-4 text-rebellion-green"
+                      class="w-3 h-3 text-rebellion-green"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -126,12 +148,12 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
+                        stroke-width="3"
                         d="M5 13l4 4L19 7"
                       />
                     </svg>
                   </span>
-                  <span class="text-off-white">{feature}</span>
+                  <span class="text-off-white text-sm">{feature}</span>
                 </li>
               ))
             }
@@ -141,44 +163,60 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
           <a
             href={hotmartUrl}
             onclick="trackInitiateCheckout()"
-            class="btn-rebellion w-full text-center text-lg block uppercase tracking-wider mb-6 text-sm md:text-base"
+            class="btn-rebellion w-full text-center text-lg block uppercase tracking-wider text-sm md:text-base"
           >
             Quiero Mi Cupo Ahora
           </a>
+        </div>
+      </div>
 
-          <!-- Vortex Discount Note -->
-          <!--           <div
-            class="text-center p-4 rounded-xl bg-white/5 border border-white/10 mb-8"
-          >
-            <p class="text-sm text-soft-gray">
-              ¿Eres estudiante de <span class="text-off-white font-bold"
-                >Método Vórtex</span
-              >?
-              <br />
-              <span class="text-rebellion-cyan font-bold"
-                >Recibes un descuento adicional de -700 USD</span
+      <!-- Reservation Card -->
+      <div class="relative group">
+        <!-- Card -->
+        <div
+          class="relative h-full glassmorphism rounded-3xl p-8 lg:p-12 border border-white/5 bg-white/[0.02] flex flex-col"
+        >
+          <!-- Program Name -->
+          <div class="text-center pt-4 mb-8">
+            <h3 class="text-2xl lg:text-3xl font-bold text-off-white mb-2">
+              Reservar Cupo
+            </h3>
+            <p class="text-soft-gray text-sm">Asegura tu lugar hoy</p>
+          </div>
+
+          <p class="text-center text-soft-gray/80 text-sm mb-8 leading-relaxed">
+            ¿Quieres aprovechar la oferta de lanzamiento pero necesitas unos
+            días? <br />
+            <span class="text-rebellion-cyan">Asegura tu cupo</span> por un monto
+            mínimo y paga el resto después.
+          </p>
+
+          <!-- Price Display -->
+          <div class="text-center mb-8">
+            <div class="flex items-center justify-center gap-4">
+              <span class="text-5xl lg:text-7xl font-black text-rebellion-cyan"
+                >$200</span
               >
-            </p>
-          </div> -->
+              <span class="text-2xl text-soft-gray font-light">USD</span>
+            </div>
+            <p class="text-soft-gray mt-2 text-sm">Reserva mínima requerida</p>
+          </div>
 
-          <!-- Bonuses Section -->
-          <!--          <div class="pt-8 border-t border-white/10">
-            <h4
-              class="text-center text-honey-beehive font-bold uppercase tracking-widest text-xs mb-6"
-            >
-              🎁 Bonos por Tiempo Limitado
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {
-                [
-                  "Masterclass: Conseguir primeros clientes",
-                  "Masterclass: Construir negocio sostenible",
-                  "Sesión privada de Transición Profesional",
-                  "Clase: Cómo vender sin sentirte vendedor",
-                ].map((bonus) => (
-                  <div class="p-3 rounded-lg bg-white/5 border border-white/5 flex items-center gap-2 text-[11px] text-soft-gray">
+          <div class="border-t border-white/10 my-8"></div>
+
+          <!-- Benefits for Reservation -->
+          <ul class="space-y-4 mb-10 flex-grow">
+            {
+              [
+                "Precio de lanzamiento garantizado",
+                "Entrada inmediata a la comunidad",
+                "Acceso a la primera sesión en vivo",
+                "Acompañamiento personalizado inicial",
+              ].map((feature) => (
+                <li class="flex items-start gap-3">
+                  <span class="flex-shrink-0 w-5 h-5 rounded-full bg-rebellion-cyan/20 flex items-center justify-center mt-0.5">
                     <svg
-                      class="w-4 h-4 text-honey-beehive flex-shrink-0"
+                      class="w-3 h-3 text-rebellion-cyan"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -186,29 +224,25 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
                       <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 012-2h2a2 2 0 012 2v1m-6 4H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 1V5a2 2 0 10-4 0v2"
+                        stroke-width="3"
+                        d="M5 13l4 4L19 7"
                       />
                     </svg>
-                    {bonus}
-                  </div>
-                ))
-              }
-            </div>
-          </div> -->
+                  </span>
+                  <span class="text-off-white/80 text-sm">{feature}</span>
+                </li>
+              ))
+            }
+          </ul>
 
-          <!-- Security Badge -->
-          <div
-            class="flex items-center justify-center gap-2 mt-6 text-sm text-soft-gray"
+          <!-- CTA Button Secondary -->
+          <a
+            href={reserveUrl}
+            onclick="trackInitiateCheckout('Reserva')"
+            class="w-full py-4 px-8 rounded-full bg-white/5 border border-white/20 text-off-white text-center font-bold uppercase tracking-widest hover:bg-rebellion-cyan hover:text-glimpse-space hover:border-white transition-all duration-500 text-sm md:text-base hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] animate-[pulse_3s_infinite]"
           >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                fill-rule="evenodd"
-                d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd"></path>
-            </svg>
-            <span>Pago seguro · </span>
-          </div>
+            Reservar Mi Cupo
+          </a>
         </div>
       </div>
     </div>
