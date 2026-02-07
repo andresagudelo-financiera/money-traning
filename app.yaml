@@ -6,8 +6,8 @@ services:
     branch: main
     deploy_on_push: true
     repo: andresagudelo-financiera/money-traning
-  "build_command: npm run build && ls -R dist"
+  build_command: npm run build && ls -R dist
   run_command: node dist/server/entry.mjs
-  http_port: 8080
+  http_port: 4321
   instance_count: 1
   instance_size_slug: apps-s-1vcpu-0.5gb
