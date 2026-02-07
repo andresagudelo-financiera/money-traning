@@ -13,16 +13,34 @@ export default function StickyCTA({
   hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50"
 }: StickyCTAProps) {
   const [isVisible, setIsVisible] = useState(false);
+  const [isOverlapping, setIsOverlapping] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      // Aparecer después de 300px de scroll
       const scrollY = window.scrollY;
       setIsVisible(scrollY > 300);
     };
 
+    // Intersection Observer to detect Hero and Pricing
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const overlapping = entries.some(entry => entry.isIntersecting);
+        setIsOverlapping(overlapping);
+      },
+      { threshold: 0.1 }
+    );
+
+    const targetSections = ['hero', 'pricing']
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    targetSections.forEach(section => observer.observe(section));
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
   }, []);
 
   const handleClick = () => {
@@ -47,7 +65,7 @@ export default function StickyCTA({
       className={`
         fixed bottom-6 left-1/2 -translate-x-1/2 z-50
         transition-all duration-500 ease-out
-        ${isVisible
+        ${isVisible && !isOverlapping
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-10 pointer-events-none'
         }
@@ -62,7 +80,7 @@ export default function StickyCTA({
           bg-rebellion-green
           text-white font-bold
           px-8 py-5 rounded-full
-          text-lg uppercase tracking-wider
+          text-sm truncate md:text-lg uppercase tracking-wider
           shadow-none
           transition-all duration-300
           hover:scale-105

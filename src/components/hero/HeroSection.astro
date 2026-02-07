@@ -7,7 +7,10 @@
 const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
 ---
 
-<section class="relative min-h-screen flex items-center overflow-hidden">
+<section
+  id="hero"
+  class="relative min-h-screen flex items-center overflow-hidden"
+>
   <!-- Background Gradient Orbs -->
   <div class="absolute inset-0 overflow-hidden pointer-events-none">
     <div
@@ -37,26 +40,28 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
 
         <!-- Heroic H1 -->
         <h1 class="text-heroic">
-          <span class="block text-off-white">Tu dinero.</span>
-          <span class="block text-gradient-rebellion">Tus reglas.</span>
+          <span class="block text-off-white text-3xl md:text-5xl"
+            >Formación para</span
+          >
+          <span class="block text-gradient-rebellion text-6xl md:text-8xl"
+            >Money Strategist</span
+          >
         </h1>
 
         <!-- Subheadline -->
         <p
           class="text-xl lg:text-2xl text-soft-gray font-light max-w-xl leading-relaxed"
         >
-          Transforma tu relación con el dinero.
-          <span class="text-off-white font-medium">Money Training</span> es el programa
-          que te da
-          <span class="text-rebellion-green"
-            >estructura sin perder tu esencia.</span
-          >
+          Transforma tu conocimiento financiero en una
+          <span class="text-off-white font-medium">profesión real.</span>
+          Acompañamiento estratégico para construir una
+          <span class="text-rebellion-green">nueva carrera con propósito.</span>
         </p>
 
         <!-- CTA Button with Badge -->
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
           <div class="relative inline-block">
-            <div class="absolute -top-4 -right-2 z-20">
+            <div class="absolute -top-4 -right-1 z-20">
               <span
                 class="bg-red-600 text-white text-[8px] font-bold px-2 py-1 rounded shadow-lg border border-white/20 uppercase flex items-center gap-1"
               >
@@ -66,7 +71,7 @@ const hotmartUrl = "https://pay.hotmart.com/Q104268411L?off=4ryszw50";
             <a
               href={hotmartUrl}
               onclick="trackInitiateCheckout()"
-              class="btn-rebellion text-center text-lg uppercase tracking-wider"
+              class="btn-rebellion text-center text-lg uppercase tracking-wider truncate text-sm md:text-base"
             >
               Quiero Transformar Mi Vida
             </a>
