@@ -4,6 +4,8 @@ interface Props {
   description?: string;
 }
 
+import WhatsAppButton from "../components/support/WhatsAppButton";
+
 const {
   title = "Money Training | Claudia Uribe - Tu Dinero, Tus Reglas",
   description = "Programa de formación profesional para transformar tu relación con el dinero. Precio especial de $3,500 USD (antes $8,900).",
@@ -118,6 +120,7 @@ const siteUrl = "https://moneytraining.info";
   </head>
   <body class="min-h-screen">
     <slot />
+    <WhatsAppButton client:load />
 
     <!-- Tracking Helper -->
     <script is:inline>
