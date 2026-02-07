@@ -1,9 +1,13 @@
 spec:
   name: money-traning
-  static_sites:
-  - git:
+  services:
+  - environment_slug: node-js
+    git:
       branch: main
       repo_clone_url: https://github.com/andresagudelo-financiera/money-traning.git
     name: money-traning
     build_command: npm run build
-    output_dir: dist
+    run_command: node ./dist/server/entry.mjs
+    http_port: 8080
+    instance_count: 1
+    instance_size_slug: apps-s-1vcpu-0.5gb
