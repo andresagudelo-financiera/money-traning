@@ -56,7 +56,7 @@ export default function StickyCTA({
 
     // Pequeño delay para asegurar que el tracking se envíe
     setTimeout(() => {
-      window.location.href = hotmartUrl;
+      window.open(hotmartUrl, '_blank', 'noopener,noreferrer');
     }, 100);
   };
 
