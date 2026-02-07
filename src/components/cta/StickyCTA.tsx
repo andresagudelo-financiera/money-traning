@@ -49,7 +49,7 @@ export default function StickyCTA({
       (window as any).fbq('track', 'InitiateCheckout', {
         content_name: 'Money Training',
         content_category: 'Course',
-        value: 3300,
+        value: 3500,
         currency: 'USD'
       });
     }

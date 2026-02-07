@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title = "Money Training | Claudia Uribe - Tu Dinero, Tus Reglas",
-  description = "Programa de formación profesional para transformar tu relación con el dinero. Precio especial de $3,300 USD (antes $8,900).",
+  description = "Programa de formación profesional para transformar tu relación con el dinero. Precio especial de $3,500 USD (antes $8,900).",
 } = Astro.props;
 
 const ogImage = "/1.1.jpg";
@@ -59,7 +59,7 @@ const siteUrl = "https://moneytraining.info";
         },
         "offers": {
           "@type": "Offer",
-          "price": "3300",
+          "price": "3500",
           "priceCurrency": "USD",
           "availability": "https://schema.org/InStock"
         }
@@ -126,7 +126,7 @@ const siteUrl = "https://moneytraining.info";
           fbq("track", "InitiateCheckout", {
             content_name: "Money Training",
             content_category: "Course",
-            value: 3300,
+            value: 3500,
             currency: "USD",
           });
         }
