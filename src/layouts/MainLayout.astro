@@ -1,0 +1,130 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Money Training | Claudia Uribe - Tu Dinero, Tus Reglas",
+  description = "Programa de formación profesional para transformar tu relación con el dinero. Precio especial de $3,300 USD (antes $8,900).",
+} = Astro.props;
+
+const ogImage = "/og-image.jpg";
+const siteUrl = "https://moneytraining.claudiauribe.com";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Claudia Uribe" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${siteUrl}${ogImage}`} />
+
+    <!-- Schema.org Product -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Money Training",
+        "description": "Programa de formación profesional para transformar tu relación con el dinero",
+        "brand": {
+          "@type": "Brand",
+          "name": "Claudia Uribe"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "3300",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script is:inline>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js",
+      );
+      // TODO: Replace with actual Pixel ID
+      // fbq('init', 'YOUR_PIXEL_ID');
+      // fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+      />
+    </noscript>
+
+    <!-- Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <style>
+      /* Critical CSS - Above the fold */
+      body {
+        margin: 0;
+        background-color: #1e1e1c;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <slot />
+
+    <!-- Tracking Helper -->
+    <script is:inline>
+      window.trackInitiateCheckout = function () {
+        if (typeof fbq !== "undefined") {
+          fbq("track", "InitiateCheckout", {
+            content_name: "Money Training",
+            content_category: "Course",
+            value: 3300,
+            currency: "USD",
+          });
+        }
+      };
+    </script>
+  </body>
+</html>
