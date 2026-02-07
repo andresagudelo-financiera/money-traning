@@ -1,6 +1,15 @@
-## Get Started
+## Money Training (Astro)
 
-This guide describes how to use DigitalOcean App Platform to run a sample Next.js application.
+This project has been migrated from Next.js to Astro.
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+This guide describes how to use DigitalOcean App Platform to run a sample application.
 
 **Note**: Following these steps may result in charges for the use of DigitalOcean services.
 
