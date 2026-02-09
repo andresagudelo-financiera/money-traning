@@ -2,3 +2,5 @@ node_modules/
 .next/
 /_static
 dist/
+
+id_ed25519_financieramente*
