@@ -13,15 +13,14 @@ const logoUrl = "/Money Training_Logo-01.png";
   .animate-step-1 { animation: fadeInUpCustom 0.8s ease-out forwards; }
   .animate-step-2 { opacity: 0; animation: fadeInUpCustom 0.8s ease-out 0.5s forwards; }
 
-  /* 2. EFECTO PÁLPITO NEÓN ÚNICO (A los 4 segundos) */
+  /* 2. EFECTO PÁLPITO NEÓN ÚNICO */
   @keyframes neonPulseOnce {
     0% {
-      box-shadow: 0 0 60px rgba(16,185,129,0.1); /* Sombra original sutil */
-      border-color: rgba(255,255,255,0.1); /* Borde original sutil */
+      box-shadow: 0 0 60px rgba(16,185,129,0.1);
+      border-color: rgba(255,255,255,0.1);
       transform: scale(1);
     }
     50% {
-      /* Brillo intenso y expansión sutil en el punto medio */
       box-shadow: 0 0 120px rgba(16,185,129,0.6), 0 0 40px rgba(16,185,129,0.4) inset; 
       border-color: rgba(16,185,129,0.8);
       transform: scale(1.02); 
@@ -34,10 +33,20 @@ const logoUrl = "/Money Training_Logo-01.png";
   }
 
   .animate-neon-pulse-once {
-    /* Ejecuta la animación 'neonPulseOnce' durante 1s, espera 4s antes de empezar, y hazlo solo 1 vez */
     animation: neonPulseOnce 1s ease-in-out 4s 1 forwards;
-    /* Asegura que el contenedor tenga transición suave para propiedades que no se animan */
     transition: all 0.5s ease-in-out;
+  }
+
+  /* 3. BOTÓN SLIM & GLOW */
+  .btn-slim-glow {
+    transition: all 0.3s ease;
+    background-color: #00e3a3; /* Verde Marca */
+    color: #1e1e1c; /* Negro Fondo */
+  }
+  
+  .btn-slim-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 227, 163, 0.6); /* Glow Verde */
+    transform: translateY(0); /* No movimiento, solo luz */
   }
 </style>
 
@@ -57,22 +66,18 @@ const logoUrl = "/Money Training_Logo-01.png";
     />
 
     <div class="text-center w-full max-w-4xl mx-auto mb-16 px-2">
-      
       <h2 class="animate-step-1 font-['Work_Sans'] text-base md:text-lg lg:text-xl font-semibold leading-snug text-white mb-3 tracking-tight">
         El dinero no obedece al esfuerzo, obedece a la 
         <span class="font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
           estrategia.
         </span>
       </h2>
-
       <p class="animate-step-2 font-['Work_Sans'] text-xs md:text-sm font-light text-gray-300/80 leading-tight max-w-xl mx-auto">
         Descubre en este video la metodología profesional para dejar de operar dentro del sistema y empezar a construir su arquitectura, para ti y para los clientes que guiarás.
       </p>
-
     </div>
 
     <div class="relative w-full max-w-4xl aspect-video rounded-xl overflow-hidden shadow-[0_0_60px_rgba(16,185,129,0.1)] border border-white/10 bg-black group mx-auto mb-20 animate-neon-pulse-once">
-      
       <video 
         id="main-video"
         class="w-full h-full object-cover" 
@@ -99,42 +104,45 @@ const logoUrl = "/Money Training_Logo-01.png";
     </div>
   </div>
 
-  <div class="relative z-10 w-full max-w-6xl mx-auto mt-4 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+  <div class="relative z-10 w-full max-w-6xl mx-auto mt-4 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center overflow-hidden">
     
-    <div class="lg:col-span-7 flex flex-col text-center lg:text-left">
+    <div class="lg:col-span-6 flex flex-col text-center lg:text-left z-10">
       <div class="flex items-center justify-center lg:justify-start gap-3 mb-2">
-        <span class="h-px w-10 bg-emerald-500"></span>
-        <span class="text-emerald-400 font-bold uppercase tracking-widest text-lg md:text-xl font-['Work_Sans']">Formación Para</span>
+        <span class="h-px w-8 bg-emerald-500"></span>
+        <span class="text-emerald-400 font-bold uppercase tracking-widest text-base md:text-lg font-['Work_Sans']">Formación Para</span>
       </div>
-      <h1 class="font-['Work_Sans'] font-black text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] text-white tracking-tighter mb-0">
+      <h1 class="font-['Work_Sans'] font-black text-5xl md:text-6xl lg:text-[6rem] leading-[0.95] text-white tracking-tighter mb-0">
         Money
       </h1>
-      <h1 class="font-['Work_Sans'] font-black text-6xl md:text-7xl lg:text-[7.5rem] leading-[0.95] tracking-tighter">
+      <h1 class="font-['Work_Sans'] font-black text-5xl md:text-6xl lg:text-[6rem] leading-[0.95] tracking-tighter">
         <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 drop-shadow-[0_0_30px_rgba(52,211,153,0.2)]">
           Strategist
         </span>
       </h1>
-      <div class="mt-6 h-1.5 w-32 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mx-auto lg:mx-0 opacity-50"></div>
+      <div class="mt-6 h-1.5 w-24 bg-gradient-to-r from-emerald-500 to-transparent rounded-full mx-auto lg:mx-0 opacity-50"></div>
     </div>
 
-    <div class="lg:col-span-5 flex flex-col items-center text-center gap-8 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-10">
-      <div class="space-y-4 max-w-md mx-auto">
-        <p class="text-xl md:text-2xl text-white font-bold leading-tight font-['Work_Sans']">
-          Transforma tu conocimiento financiero en una <span class="text-emerald-400 decoration-emerald-500/30 underline decoration-4 underline-offset-4">profesión real.</span>
-        </p>
-        <p class="text-gray-400 text-base md:text-lg font-normal leading-relaxed font-['Work_Sans']">
-          Acompañamiento estratégico para construir una nueva carrera con propósito, autoridad y altos ingresos.
+    <div class="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left gap-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-10 z-10">
+      
+      <div class="space-y-3 max-w-md">
+        <h2 class="text-lg md:text-xl text-[#ebede5] font-bold leading-tight font-['Work_Sans']">
+          Tu crecimiento financiero es el motor de tu carrera.
+        </h2>
+        
+        <p class="text-[#d9d8d4] text-sm font-normal leading-relaxed font-['Work_Sans']">
+          Convierte tu talento y disciplina en una profesión de alto impacto. Aprende a gestionar tu propio capital con maestría y monetiza ese conocimiento guiando a otros a salir del "juego de la supervivencia".
         </p>
       </div>
+
       <a 
         href="https://pay.hotmart.com/Q104268411L?off=daig1z7w" 
         target="_blank"
-        class="w-full md:w-auto px-10 py-5 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-full text-xl font-bold text-white shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(16,185,129,0.6)] hover:-translate-y-1 transition-all duration-300 transform flex items-center justify-center gap-3 group ring-1 ring-white/20"
+        class="btn-slim-glow px-8 py-3 rounded-full text-sm font-semibold font-['Work_Sans'] whitespace-nowrap inline-block"
       >
-        <span class="text-2xl group-hover:animate-bounce">🚀</span>
-        <span class="font-['Work_Sans'] tracking-wide">Quiero Transformar Mi Vida</span>
+        Aplicar como Estratega
       </a>
-      <div class="flex flex-col items-center gap-2">
+
+      <div class="flex flex-col items-center lg:items-start gap-2 pt-2">
          <div class="flex -space-x-3">
             <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-xs border-2 border-[#0a0a0a] text-white font-bold">JD</div>
             <div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-xs border-2 border-[#0a0a0a] text-white font-bold">MA</div>
@@ -145,7 +153,9 @@ const logoUrl = "/Money Training_Logo-01.png";
            Más de <span class="text-white font-bold">2,100</span> profesionales formados
          </div>
       </div>
+
     </div>
+
   </div>
 
   <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0a0a0a] to-transparent z-0 pointer-events-none"></div>
@@ -156,22 +166,18 @@ const logoUrl = "/Money Training_Logo-01.png";
   const overlay = document.getElementById('video-overlay');
 
   if (video && overlay) {
-    
-    // 1. INICIAR AUTOMÁTICAMENTE A LOS 5 SEGUNDOS
     setTimeout(() => {
       video.play().catch(error => console.log("Autoplay bloqueado o intervenido:", error));
     }, 5000); 
 
-    // 2. ACTIVAR SONIDO AL CLIC
     overlay.addEventListener('click', () => {
-      video.muted = false;     // Sonido ON
-      video.currentTime = 0;   // Reinicio
-      video.controls = true;   // Controles nativos
-      video.play();            // Aseguramos play
-      overlay.classList.add('hidden'); // Adiós botón
+      video.muted = false;     
+      video.currentTime = 0;   
+      video.controls = true;   
+      video.play();            
+      overlay.classList.add('hidden'); 
     });
 
-    // 3. REAPARECER BOTÓN AL FINAL
     video.addEventListener('ended', () => {
       video.controls = false;
       overlay.classList.remove('hidden');
