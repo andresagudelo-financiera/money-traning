@@ -1,11 +1,15 @@
 ---
 /**
  * Money Training - Landing Page Principal
- * "Rebelión Elegante" - Estructura con Alma
+ * "Rebelión Elegante" - Versión Money Strategist
  */
 
 import MainLayout from "../layouts/MainLayout.astro";
-import HeroSection from "../components/hero/HeroSection.astro";
+
+// COMPONENTE HERO ACTUALIZADO
+import HeroPlayer from '../components/hero/HeroPlayer.astro';
+
+// Secciones existentes
 import BenefitsSection from "../components/benefits/BenefitsSection.astro";
 import PricingSection from "../components/pricing/PricingSection.astro";
 import ContactForm from "../components/forms/ContactForm.astro";
@@ -16,21 +20,15 @@ import "../styles/global.css";
 ---
 
 <MainLayout>
-  <!-- Hero Section - The Authority -->
-  <HeroSection />
+  <HeroPlayer />
 
-  <!-- Benefits Section - Transformation Points -->
   <BenefitsSection />
 
-  <!-- Pricing Section - The Price Anchor -->
   <PricingSection />
 
-  <!-- Contact Section - Lead Capture -->
   <ContactForm />
 
-  <!-- Footer -->
   <Footer />
 
-  <!-- Sticky CTA - React Island -->
-  <StickyCTA client:load />
+  <StickyCTA client:load hotmartUrl="https://pay.hotmart.com/Q104268411L?off=daig1z7w" />
 </MainLayout>
